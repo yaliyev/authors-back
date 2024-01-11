@@ -5,7 +5,7 @@ var AuthorSchema = new mongoose.Schema({
   birthYear: Number,
   genre: String,
   isDead: Boolean,
-  Gender: String,
+  gender: String,
   authorImage: String
 })
 
