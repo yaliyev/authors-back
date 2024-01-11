@@ -5,7 +5,7 @@ const app = express();
 var authorRouter = require('./routers/author.router');
 var uploaderRouter  =require('./routers/uploader.router');
 let bodyParser = require('body-parser');
-
+var fs = require('fs');
 require('dotenv').config();
 app.use(bodyParser.json());
 
@@ -16,6 +16,12 @@ require('./config/cloudinary');
 
 app.use(authorRouter);
 app.use(uploaderRouter);
+
+const imagesDir = 'images';
+if(!fs.existsSync(imagesDir)){
+  console.log("Images directory created");
+  fs.mkdirSync(imagesDir);
+}
 
 app.listen(PORT,()=>{
     console.log(`App listening on ${PORT}`);
