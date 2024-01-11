@@ -4,11 +4,13 @@ var authorRouter = express.Router();
 
 var authorController = require('../controllers/author.controller');
 
+var AuthorMiddleware = require('../middlewares/author.middleware');
+
 authorRouter.get('/',authorController.getAll);
 
 authorRouter.get('/:id',authorController.getById);
 
-authorRouter.post('/',authorController.post);
+authorRouter.post('/',AuthorMiddleware,authorController.post);
 
 authorRouter.delete('/:id',authorController.delete);
 
