@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start":"nodemon ./compiler-scripts/index.js",
+    "start": "nodemon ./compiler-scripts/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,9 +18,11 @@
   },
   "homepage": "https://github.com/yaliyev/authors-back#readme",
   "devDependencies": {
+    "@types/node": "^20.11.0",
     "nodemon": "^3.0.2"
   },
   "dependencies": {
+    "body-parser": "^1.20.2",
     "dotenv": "^16.3.1",
     "express": "^4.18.2"
   }
