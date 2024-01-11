@@ -8,9 +8,8 @@ var AuthorController: any = {
     },
     getById: async (req: any, res: any) => {
         var { id } = req.params;
-
         try {
-            const author = AuthorModel.findById(id);
+            const author = await AuthorModel.findById(id);
             res.status(200).send(author);
         } catch (error) {
             res.status(404).send({ message: 'Not Found' });
@@ -26,7 +25,7 @@ var AuthorController: any = {
     delete: async (req: any, res: any) => {
         const { id } = req.params;
 
-        const author = AuthorModel.findById(id);
+        const author =  await AuthorModel.findById(id);
         await AuthorModel.findByIdAndDelete(id);
 
         res.send(author);

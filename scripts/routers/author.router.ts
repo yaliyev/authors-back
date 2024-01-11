@@ -10,7 +10,7 @@ authorRouter.get('/:id',authorController.getById);
 
 authorRouter.post('/',authorController.post);
 
-authorRouter.get('/:id',authorController.delete);
+authorRouter.delete('/:id',authorController.delete);
 
 authorRouter.put('/',authorController.update);
 
