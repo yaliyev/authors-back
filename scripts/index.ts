@@ -10,6 +10,8 @@ app.use(bodyParser.json());
 
 let PORT = process.env.PORT || 5000;
 
+require('./config/db');
+
 app.listen(PORT,()=>{
     console.log(`App listening on ${PORT}`);
 })
