@@ -78,3 +78,5 @@ var AuthorController: any = {
     }
 
 }
+
+module.exports = AuthorController;
