@@ -1,0 +1,27 @@
+{
+  "name": "authors-back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start":"nodemon ./compiler-scripts/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yaliyev/authors-back.git"
+  },
+  "author": "yaliyev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yaliyev/authors-back/issues"
+  },
+  "homepage": "https://github.com/yaliyev/authors-back#readme",
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2"
+  }
+}
