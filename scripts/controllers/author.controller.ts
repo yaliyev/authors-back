@@ -20,7 +20,7 @@ var AuthorController: any = {
         const newAuthor = new AuthorModel(req.body);
 
         await newAuthor.save();
-        res.send(newAuthor);
+        res.status(201).send(newAuthor);
     },
     delete: async (req: any, res: any) => {
         const { id } = req.params;
@@ -32,7 +32,7 @@ var AuthorController: any = {
 
     },
     update: async (req: any, res: any) => {
-        const { id, name, birthYear, genre, isDead, gender, authorImage } = req.body;
+        const { id, name, birthYear, genre, isDead, gender, authorImage,bio } = req.body;
 
         try {
             const data = await AuthorModel.findById(id);
@@ -44,6 +44,7 @@ var AuthorController: any = {
                 isDead:false,
                 gender:'',
                 authorImage:'',
+                bio:''
             }
 
             if(name !== undefined){
@@ -63,6 +64,9 @@ var AuthorController: any = {
             }
             if(authorImage !== undefined){
                 updatedAuthor.authorImage = authorImage;
+            }
+            if(bio !== undefined){
+                updatedAuthor.bio = bio;
             }
 
             await AuthorModel.findByIdAndUpdate(id,updatedAuthor);

@@ -6,7 +6,8 @@ var AuthorValidation = Joi.object({
     genre: Joi.string().required(),
     isDead: Joi.boolean(),
     gender: Joi.string().required(),
-    authorImage:Joi.optional().allow('')
+    authorImage:Joi.optional().allow(''),
+    bio: Joi.string().optional().allow('')
 })
 
 module.exports = AuthorValidation;

@@ -6,7 +6,8 @@ var AuthorSchema = new mongoose.Schema({
   genre: String,
   isDead: Boolean,
   gender: String,
-  authorImage: String
+  authorImage: String,
+  bio:String
 })
 
 module.exports = AuthorSchema;
