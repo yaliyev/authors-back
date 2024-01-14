@@ -6,9 +6,7 @@ var UploaderController: any = {
 
         
         
-        console.log(req.file);
-        
-        console.log(`-----`);
+   
         let imageGlobalUrl = "";
         await cloudinary.uploader
             .upload(req.file.path, {
@@ -20,6 +18,36 @@ var UploaderController: any = {
             });
 
         res.send({ message: 'Image uploaded',url:imageGlobalUrl });
+    },
+    uploadBook: async(req:any,res:any) =>{
+        let bookGlobalUrl = "";
+
+        if(req.file.mimetype == "text/plain" ){
+            await cloudinary.uploader
+            .upload(req.file.path, {
+                folder: 'authors-books',
+                resource_type: 'raw'
+            })
+            .then((response)=>{
+                bookGlobalUrl = response.url;
+            });
+
+        res.send({ message: 'Book uploaded',url:bookGlobalUrl });
+        }else{
+            await cloudinary.uploader
+            .upload(req.file.path, {
+                folder: 'authors-books',
+                resource_type: 'image'
+            })
+            .then((response)=>{
+                bookGlobalUrl = response.url;
+            });
+
+        res.send({ message: 'Book uploaded',url:bookGlobalUrl });
+        }
+        
+        
+        
     }
 }
 

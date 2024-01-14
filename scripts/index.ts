@@ -22,10 +22,17 @@ app.use(uploaderRouter);
 app.use(bookRouter);
 
 const imagesDir = 'images';
+const booksDir = 'books';
+
 if(!fs.existsSync(imagesDir)){
   console.log("Images directory created");
   fs.mkdirSync(imagesDir);
 }
+if(!fs.existsSync(booksDir)){
+  console.log("Books directory created");
+  fs.mkdirSync(booksDir);
+}
+
 
 app.listen(PORT,()=>{
     console.log(`App listening on ${PORT}`);

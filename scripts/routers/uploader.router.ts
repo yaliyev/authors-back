@@ -11,5 +11,7 @@ const upload = multer({storage});
 
 uploaderRouter.post('/uploader/upload',upload.single('file'),uploaderController.upload);
 
+uploaderRouter.post('/uploader/uploadBook',upload.single('file'),uploaderController.uploadBook);
+
 module.exports = uploaderRouter;
 
