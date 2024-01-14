@@ -4,6 +4,7 @@ var express = require('express');
 const app = express();
 var authorRouter = require('./routers/author.router');
 var uploaderRouter  =require('./routers/uploader.router');
+var bookRouter = require('./routers/book.router');
 let bodyParser = require('body-parser');
 var fs = require('fs');
 require('dotenv').config();
@@ -18,6 +19,7 @@ require('./config/cloudinary');
 app.use(cors());
 app.use(authorRouter);
 app.use(uploaderRouter);
+app.use(bookRouter);
 
 const imagesDir = 'images';
 if(!fs.existsSync(imagesDir)){
