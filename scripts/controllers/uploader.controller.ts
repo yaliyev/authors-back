@@ -4,11 +4,11 @@ var UploaderController: any = {
     upload: async (req: any, res: any) => {
 
 
-        console.log(`-----`);
+        
         
         console.log(req.file);
         
-        
+        console.log(`-----`);
         let imageGlobalUrl = "";
         await cloudinary.uploader
             .upload(req.file.path, {

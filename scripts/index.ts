@@ -8,12 +8,14 @@ let bodyParser = require('body-parser');
 var fs = require('fs');
 require('dotenv').config();
 app.use(bodyParser.json());
+var cors = require('cors');
 
 let PORT = process.env.PORT || 5000;
 
 require('./config/db');
 require('./config/cloudinary');
 
+app.use(cors());
 app.use(authorRouter);
 app.use(uploaderRouter);
 
