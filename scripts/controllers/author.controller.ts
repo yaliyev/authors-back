@@ -1,5 +1,7 @@
 var AuthorModel = require('../models/author.model');
 
+var BookModel = require('../models/book.model');
+
 var AuthorController: any = {
     getAll: async (req: any, res: any) => {
         const authors = await AuthorModel.find({});
@@ -26,6 +28,8 @@ var AuthorController: any = {
         const { id } = req.params;
 
         const author =  await AuthorModel.findById(id);
+
+        await BookModel.deleteMany({authorId: id});
         await AuthorModel.findByIdAndDelete(id);
 
         res.send(author);

@@ -5,6 +5,7 @@ var mongoose = require('mongoose');
 var BookSchema = new mongoose.Schema({
     name: String,
     year: Number,
+    genre: String,
     coverImg: String,
     description: String,
     bookFile: String,
